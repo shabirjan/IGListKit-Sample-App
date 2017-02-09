@@ -34,6 +34,7 @@
 		D0F3B6631E4C431700376E56 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F3B6621E4C431700376E56 /* FeedViewController.swift */; };
 		D0F3B6651E4C476200376E56 /* JournalSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F3B6641E4C476200376E56 /* JournalSectionController.swift */; };
 		D0F3B6671E4C4E8A00376E56 /* MessagesSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F3B6661E4C4E8A00376E56 /* MessagesSectionController.swift */; };
+		D0F3B6691E4C4FF300376E56 /* WeatherSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F3B6681E4C4FF300376E56 /* WeatherSectionController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +68,7 @@
 		D0F3B6621E4C431700376E56 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		D0F3B6641E4C476200376E56 /* JournalSectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalSectionController.swift; sourceTree = "<group>"; };
 		D0F3B6661E4C4E8A00376E56 /* MessagesSectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesSectionController.swift; sourceTree = "<group>"; };
+		D0F3B6681E4C4FF300376E56 /* WeatherSectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherSectionController.swift; sourceTree = "<group>"; };
 		DC3FA05C5618EC7BE0845CC7 /* Pods-Marslink.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marslink.release.xcconfig"; path = "Pods/Target Support Files/Pods-Marslink/Pods-Marslink.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -147,6 +149,7 @@
 			children = (
 				D0F3B6641E4C476200376E56 /* JournalSectionController.swift */,
 				D0F3B6661E4C4E8A00376E56 /* MessagesSectionController.swift */,
+				D0F3B6681E4C4FF300376E56 /* WeatherSectionController.swift */,
 			);
 			name = SectionControllers;
 			path = Marslink/SectionControllers;
@@ -348,6 +351,7 @@
 				29E2CDED1DC7B4CF00A9E0F4 /* CustomNavigationBar.swift in Sources */,
 				D0F3B6671E4C4E8A00376E56 /* MessagesSectionController.swift in Sources */,
 				29E2CDDA1DC7B4CF00A9E0F4 /* DateSortable.swift in Sources */,
+				D0F3B6691E4C4FF300376E56 /* WeatherSectionController.swift in Sources */,
 				29E2CDDF1DC7B4CF00A9E0F4 /* Weather.swift in Sources */,
 				29E2CDE91DC7B4CF00A9E0F4 /* Theme.swift in Sources */,
 				29E2CDEB1DC7B4CF00A9E0F4 /* ClassicFeedViewController.swift in Sources */,

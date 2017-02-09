@@ -11,7 +11,7 @@ import IGListKit
 class FeedViewController: UIViewController {
 
     let pathFinder = Pathfinder()
-    
+    let wxScanner = WxScanner()
     lazy var adapater: IGListAdapter = {
         return IGListAdapter(updater: IGListAdapterUpdater(), viewController:self, workingRangeSize:0)
     }()
@@ -45,15 +45,24 @@ class FeedViewController: UIViewController {
 }
 extension FeedViewController : IGListAdapterDataSource{
     func objects(for listAdapter: IGListAdapter) -> [IGListDiffable] {
-        var items:[IGListDiffable] = pathFinder.messages
+        var items:[IGListDiffable] = [wxScanner.currentWeather]
+        items += pathFinder.messages as [IGListDiffable]
         items += loader.entries as [IGListDiffable]
-        return items
+        
+        return items.sorted(by: {(left:Any, right:Any) -> Bool in
+            if let  left = left as? DateSortable, let right = right as? DateSortable{
+                return left.date > right.date
+            }
+            return false
+        })
     }
     func listAdapter(_ listAdapter: IGListAdapter, sectionControllerFor object: Any) -> IGListSectionController {
         if object is Message{
             return MessagesSectionController()
-        }else{
+        }else if object is JournalEntry{
             return JournalSectionController()
+        }else{
+            return WeatherSectionController()
         }
        
     }
