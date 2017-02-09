@@ -32,6 +32,8 @@ class FeedViewController: UIViewController {
         view.addSubview(collectionView)
         adapater.collectionView = collectionView
         adapater.dataSource = self
+        pathFinder.delegate = self
+        pathFinder.connect()
         // Do any additional setup after loading the view.
     }
 
@@ -68,6 +70,11 @@ extension FeedViewController : IGListAdapterDataSource{
     }
     func emptyView(for listAdapter: IGListAdapter) -> UIView? {
         return nil
+    }
+}
+extension FeedViewController: PathfinderDelegate{
+    func pathfinderDidUpdateMessages(pathfinder: Pathfinder) {
+        adapater.performUpdates(animated: true, completion: nil)
     }
 }
 
