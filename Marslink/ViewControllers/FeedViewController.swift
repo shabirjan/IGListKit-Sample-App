@@ -10,6 +10,8 @@ import UIKit
 import IGListKit
 class FeedViewController: UIViewController {
 
+    let pathFinder = Pathfinder()
+    
     lazy var adapater: IGListAdapter = {
         return IGListAdapter(updater: IGListAdapterUpdater(), viewController:self, workingRangeSize:0)
     }()
@@ -43,10 +45,17 @@ class FeedViewController: UIViewController {
 }
 extension FeedViewController : IGListAdapterDataSource{
     func objects(for listAdapter: IGListAdapter) -> [IGListDiffable] {
-        return loader.entries
+        var items:[IGListDiffable] = pathFinder.messages
+        items += loader.entries as [IGListDiffable]
+        return items
     }
     func listAdapter(_ listAdapter: IGListAdapter, sectionControllerFor object: Any) -> IGListSectionController {
-        return  JournalSectionController()
+        if object is Message{
+            return MessagesSectionController()
+        }else{
+            return JournalSectionController()
+        }
+       
     }
     func emptyView(for listAdapter: IGListAdapter) -> UIView? {
         return nil
